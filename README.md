@@ -42,5 +42,5 @@ real-time result display.
 Open `index.html` in any web browser. No installation or server required.
 
 ## Author
-[Your Full Name]
+[CHITRANSHA BHATI]
 Web Development Track — Oasis Infobyte Internship

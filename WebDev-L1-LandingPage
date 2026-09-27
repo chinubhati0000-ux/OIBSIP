@@ -1,0 +1,31 @@
+# Landing Page — Tata Motors (Concept Redesign)
+
+## Track
+Web Development & Designing — Level 1, Task 1
+
+## Objective
+A visually polished static landing page built with HTML5 and CSS3, showcasing foundational
+layout, typography, and responsive design skills. This project is a concept redesign inspired
+by Tata Motors' brand identity, created for learning purposes as part of the OIBSIP internship.
+
+## Tech Stack
+- HTML5
+- CSS3 (Flexbox & Grid, no JavaScript)
+
+## Features
+- Sticky navigation bar with 3 links
+- Hero section with headline, subheadline, and call-to-action button
+- Two content sections: Features and Testimonials
+- Footer with placeholder contact/social links
+- Consistent colour palette (navy blue + electric blue accent)
+- Fully responsive layout (desktop and mobile)
+- Clear typographic hierarchy (Space Grotesk headings, Inter body text)
+
+## How to View
+Clone or download this folder and open `index.html` directly in any web browser —
+no build steps or dependencies required.
+
+## Disclaimer
+This is a concept redesign created for educational purposes as part of a web development
+internship task. It is not an official Tata Motors product or affiliated with Tata Motors
+in any way.

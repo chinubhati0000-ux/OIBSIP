@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4f8cff, #1d3f9e);
+  padding: 20px;
+}
+
+.converter-card {
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #1d3f9e;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 13px;
+  color: #444;
+  margin: 14px 0 6px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4f8cff;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #1d3f9e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #163278;
+}
+
+.error {
+  color: #d9363e;
+  font-size: 13px;
+  margin-top: 10px;
+  min-height: 16px;
+}
+
+.result-box {
+  margin-top: 18px;
+  background: #f4f7ff;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #222;
+}
+
+.result-box p {
+  margin: 4px 0;
+}

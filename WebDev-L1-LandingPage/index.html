@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tata Motors — Engineered to Move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2E63;
+    --navy-deep:#081F45;
+    --electric:#00AEEF;
+    --bg:#F7F8FA;
+    --ink:#101418;
+    --muted:#6B7280;
+    --line:#E2E5EA;
+    box-sizing:border-box;
+  }
+  *{box-sizing:inherit;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:600; line-height:1.1;}
+
+  /* NAV */
+  header{position:sticky; top:0; z-index:50; background:rgba(11,46,99,0.96); backdrop-filter:blur(6px);}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1140px; margin:0 auto;}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.25rem; color:#fff; letter-spacing:0.02em;}
+  .nav-links{display:flex; gap:32px; font-size:0.92rem; color:#C7D3E8;}
+  .nav-links a{padding:4px 2px; border-bottom:2px solid transparent; transition:border-color .2s, color .2s;}
+  .nav-links a:hover, .nav-links a:focus-visible{border-color:var(--electric); color:#fff; outline:none;}
+  .nav-cta{background:var(--electric); color:#04263F; padding:10px 20px; border-radius:2px; font-size:0.88rem; font-weight:600;}
+  .menu-toggle{display:none; background:none; border:none; color:#fff; font-size:1.4rem; cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative; background:linear-gradient(135deg, var(--navy-deep), var(--navy) 60%);
+    padding:120px 24px 100px; overflow:hidden;
+  }
+  .streaks{position:absolute; inset:0; opacity:0.5; pointer-events:none;}
+  .streaks span{
+    position:absolute; height:2px; background:linear-gradient(90deg, transparent, var(--electric), transparent);
+    transform:rotate(-8deg);
+  }
+  .hero-inner{position:relative; z-index:2; max-width:1140px; margin:0 auto;}
+  .eyebrow{color:var(--electric); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:20px;}
+  .hero h1{color:#fff; font-size:clamp(2.4rem,6vw,4rem); max-width:720px; margin-bottom:24px;}
+  .hero p{color:#B9C6DC; font-size:1.1rem; max-width:460px; margin-bottom:34px;}
+  .btn-primary{
+    display:inline-block; background:var(--electric); color:#04263F;
+    padding:15px 32px; border-radius:2px; font-weight:600; font-size:0.95rem;
+    transition:transform .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-secondary{
+    display:inline-block; color:#fff; padding:15px 20px; font-size:0.95rem;
+    border-bottom:1px solid rgba(255,255,255,0.4); margin-left:18px;
+  }
+
+  /* FEATURES */
+  .features{padding:96px 24px;}
+  .features h2{font-size:2.1rem; margin-bottom:14px;}
+  .section-sub{color:var(--muted); max-width:520px; margin-bottom:52px; font-size:1.02rem;}
+  .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  .feature-card{padding-top:22px; border-top:2px solid var(--navy);}
+  .feature-card h3{font-size:1.2rem; margin-bottom:10px; font-weight:600;}
+  .feature-card p{color:var(--muted); font-size:0.96rem;}
+
+  /* TESTIMONIALS */
+  .testimonials{background:var(--navy); padding:90px 24px;}
+  .testimonials h2{color:#fff; font-size:2rem; margin-bottom:14px;}
+  .testimonials .section-sub{color:#B9C6DC;}
+  .quote-block{background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:4px; padding:52px; max-width:700px;}
+  .quote-block p{font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:1.3rem; color:#fff; margin-bottom:20px;}
+  .quote-who{color:var(--electric); font-size:0.9rem;}
+
+  /* FOOTER */
+  footer{background:var(--navy-deep); color:#A9B8D0; padding:56px 24px 30px;}
+  .footer-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; max-width:1140px; margin:0 auto 32px;}
+  .footer-brand{font-family:'Space Grotesk',sans-serif; font-weight:700; color:#fff; font-size:1.15rem;}
+  .footer-col a{display:block; color:#A9B8D0; font-size:0.92rem; margin-bottom:10px;}
+  .footer-col a:hover{color:#fff;}
+  .footer-col h4{font-size:0.82rem; color:var(--electric); margin-bottom:14px; font-weight:500;}
+  .footer-bottom{max-width:1140px; margin:0 auto; padding-top:22px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.85rem;}
+
+  @media (max-width:800px){
+    .feature-grid{grid-template-columns:1fr;}
+    .btn-secondary{display:block; margin:16px 0 0;}
+    .nav-links{
+      position:fixed; top:60px; left:0; right:0; background:var(--navy-deep);
+      flex-direction:column; padding:20px 24px; gap:18px; display:none;
+    }
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:block;}
+    .nav-cta{display:none;}
+    .quote-block{padding:32px;}
+    .quote-block p{font-size:1.1rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">TATA MOTORS</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#features">Vehicles</a>
+      <a href="#testimonials">Electric</a>
+      <a href="#footer">Dealers</a>
+    </div>
+    <a href="#hero" class="nav-cta">Book a Test Drive</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="streaks">
+    <span style="top:20%; left:-10%; width:140%;"></span>
+    <span style="top:45%; left:-10%; width:120%;"></span>
+    <span style="top:68%; left:-10%; width:150%;"></span>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow">Connecting Aspirations</p>
+    <h1>Engineered to move India forward</h1>
+    <p>From electric mobility to commercial fleets, every Tata vehicle is built on one principle: performance that earns your trust, mile after mile.</p>
+    <a href="#features" class="btn-primary">Explore the Range</a>
+    <a href="#testimonials" class="btn-secondary">Why Tata</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <h2>What powers every Tata vehicle</h2>
+    <p class="section-sub">Three commitments that carry across our entire lineup, from hatchbacks to heavy trucks.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Electric mobility, done right</h3>
+        <p>India's leading EV maker, with real-world range and a charging network built to match your daily routine.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Safety as standard</h3>
+        <p>5-star rated platforms across our passenger range, not offered as an optional extra.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Built for Indian roads</h3>
+        <p>Tested across extreme heat, monsoon flooding, and high-altitude terrain before a single unit ships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <h2>Trusted across every mile</h2>
+    <p class="section-sub">What owners say after a year on the road.</p>
+    <div class="quote-block">
+      <p>"I switched to the electric model expecting compromises. Eighteen months and 30,000km later, the only thing I miss is stopping for fuel."</p>
+      <p class="quote-who">— Tata EV owner, Pune</p>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">TATA MOTORS</div>
+    <div class="footer-col">
+      <h4>Vehicles</h4>
+      <a href="#features">Electric</a>
+      <a href="#features">SUVs</a>
+      <a href="#features">Commercial</a>
+    </div>
+    <div class="footer-col">
+      <h4>Own a Tata</h4>
+      <a href="#footer">Find a Dealer</a>
+      <a href="#footer">Service Centres</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="#footer">Instagram</a>
+      <a href="#footer">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom wrap">
+    Concept redesign for educational purposes — not an official Tata Motors product.
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+</body>
+</html>
